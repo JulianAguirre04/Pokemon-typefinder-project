@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>
+    Pokemon-TypeFinder
+</title>
+
+
+
+
+<style>
+    body{
+    background-image: url('https://w0.peakpx.com/wallpaper/51/289/HD-wallpaper-pokemon-pokeball-red-ultra-background-for-u-tv-tablet-smartphone-abstract-pokeball.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    }
+</style>
+
+<style>
+    .instructions {
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    }
+</style>
+
+<style>
+    .banner {
+    background-color: #1c1a1a;
+    text-align: left;
+     color: white;
+     padding: 20px 0;
+     width: 100%;
+     font-size: 30px;
+    }
+
+
+</style>
+
+<style>
+    .link{
+     color:black;
+     bottom: 85px;
+     position: relative;
+    }
+</style>
+
+<div style="font-family:_Panchang;" class="banner">
+    Find Your Type!
+</div>
+
+
+<p class="instructions">
+    click another type for dual-type, or click again to show single type <br>
+</p>
+
+<a href="https://bulbapedia.bulbagarden.net/wiki/Category:Pokémon_by_type" target="_blank" class="link">
+    <p style="text-align:center"> Link to Bulbapedia </p>
+</a>
+
+<style>
+    button {
+    color: white;
+    border: ridge;
+    height: 30px;
+    width: 70px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-color: black;
+    }
+</style>
+
+<style>
+    #status{
+    text-align:center;
+    color: white;
+    }
+</style>
+
+
+
+<style>
+    .grass{
+    background-color: rgb(112, 193, 51);
+    color: white;
+    border: outset;
+    height: 30px;
+    width: 70px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-color: black;
+    margin-right: 8px;
+    transition: opacity 0.15s;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .water{
+    background-color: rgb(86, 173, 254);
+    color: white;
+    border: outset;
+    height: 30px;
+    width: 70px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-color: black;
+    margin-right: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.15s,
+    color .15s;
+    }
+
+
+    .fire{
+    background-color: rgb(249, 85, 67);
+    color: white;
+    border: outset;
+    height: 30px;
+    width: 70px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-color: black;
+    margin-right: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.15s;
+    }
+
+    .rock{
+    background-color: rgb(204, 188, 113);
+    color: white;
+    border: outset;
+    height: 30px;
+    width: 70px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-color: black;
+    margin-right: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .electric{
+    background-color: rgb(254, 231, 66);
+    color: white;
+    border: outset;
+    height: 30px;
+    width: 70px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-color: black;
+    margin-right: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .dragon{
+    background-color: rgb(138, 118, 254);
+    color: white;
+    border: outset;
+    height: 30px;
+    width: 70px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-color: black;
+    margin-right: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .fairy{
+    background-color: rgb(249, 173, 254);
+    color: white;
+    border: outset;
+    height: 30px;
+    width: 70px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-color: black;
+    margin-right: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .ground{
+    background-color: rgb(235, 205, 87);
+    color: white;
+    border: outset;
+    height: 30px;
+    width: 70px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-color: black;
+    margin-right: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .steel{
+    background-color: rgb(196, 194, 218);
+    color: white;
+    border: outset;
+    height: 30px;
+    width: 70px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-color: black;
+    margin-right: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .ghost{
+    background-color: rgb(120, 115, 213);
+    color: white;
+    border: outset;
+    height: 30px;
+    width: 70px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-color: black;
+    margin-right: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .psychic{
+    background-color: rgb(245, 97, 177);
+    color: white;
+    border: outset;
+    height: 30px;
+    width: 70px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-color: black;
+    margin-right: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .flying{
+    background-color: rgb(121, 164, 255);
+    color: white;
+    border: outset;
+    height: 30px;
+    width: 70px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-color: black;
+    margin-right: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .fighting{
+    background-color: rgb(168, 85, 67);
+    color: white;
+    border: outset;
+    height: 30px;
+    width: 70px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-color: black;
+    margin-right: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .bug{
+    background-color: rgb(195, 210, 31);
+    color: white;
+    border: outset;
+    height: 30px;
+    width: 70px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-color: black;
+    margin-right: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .ice{
+    background-color: rgb(149, 240, 254);
+    color: white;
+    border: outset;
+    height: 30px;
+    width: 70px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-color: black;
+    margin-right: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .dark{
+    background-color: rgb(142, 104, 86);
+    color: white;
+    border: outset;
+    height: 30px;
+    width: 70px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-color: black;
+    margin-right: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .poison{
+    background-color: rgb(171, 93, 162);
+    color: white;
+    border: outset;
+    height: 30px;
+    width: 70px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-color: black;
+    margin-right: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .normal{
+    background-color: rgb(186, 186, 171);
+    color: white;
+    border: outset;
+    height: 30px;
+    width: 70px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-color: black;
+    margin-right: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    body{
+    margin: 0;
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    }
+
+    .ring{
+    width: 300px;
+    height: 300px;
+    display: relative;
+    }
+
+    .ring-btn{
+     --count: 18;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     margin: -15px -35px;
+     transform:
+     rotate(calc(360deg / var(--count) * var(--i)))
+     translate(220px)
+     rotate(calc(-360deg / var(--count) * var(--i)));
+     filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6));
+     transition: transform 0.15s ease, filter 0.15s ease;
+    }
+
+    .ring-btn:hover {
+
+     filter: drop-shadow(0 4px 16px rgba(255,255,255,0.5));
+     z-index: 2;
+    }
+
+    .ring-btn.selected{
+     animation: pulse 1.6s infinite;
+    }
+
+    @keyframes pulse {
+     0%, 100% { box-shadow: 0 0 8px rgba(255,255,255,0.6); }
+     50%      { box-shadow: 0 0 18px rgba(255,255,255,1); }
+    }
+
+
+    #selection-status{
+     position: relative;
+     bottom: 200px;
+    }
+
+    #results{
+    position: relative;
+    top: 100px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    max-width: 800px;
+    max-height: 70vh;
+    margin: 20px auto;
+    padding: 16px;
+    overflow-y: auto;
+    }
+
+    .pokemon-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  margin: 8px 0;
+  background: rgba(0,0,0,0.35);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+ .pokemon-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.45);
+}
+
+.pokemon-card img {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  border: 2px solid rgba(255,255,255,0.4);
+  background: rgba(0,0,0,0.3);
+}
+
+.pokemon-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon-name {
+  margin: 0;
+  font-weight: 600;
+  color: white;
+}
+
+.pokemon-id {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+}
+
+    .pokemon-skeleton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  margin: 8px 0;
+  border-radius: 12px;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.18),
+    rgba(255,255,255,0.08)
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.4s infinite;
+}
+
+.pokemon-skeleton-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.2);
+}
+
+.pokemon-skeleton-text {
+  flex: 1;
+  height: 16px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.2);
+}
+
+@keyframes skeleton-shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+
+
+
+</style>
+<body>
+<div class="ring">
+<button class="ring-btn grass" style="--i:0;" data-type="grass">Grass</button>
+<button class="ring-btn water" style="--i:1;" data-type="water">Water </button>
+<button class="ring-btn fire" style="--i:2;" data-type="fire">Fire</button>
+<button class="ring-btn rock" style="--i:3;" data-type="rock">Rock</button>
+<button class="ring-btn electric" style="--i:4;" data-type="electric">Electric</button>
+<button class="ring-btn ghost" style="--i:5;" data-type="ghost">Ghost</button>
+<button class="ring-btn steel" style="--i:6;" data-type="steel">Steel</button>
+<button class="ring-btn fairy" style="--i:7;" data-type="fairy">Fairy</button>
+<button class="ring-btn psychic" style="--i:8;" data-type="psychic">Psychic</button>
+<button class="ring-btn bug" style="--i:9;" data-type="bug">Bug</button>
+<button class="ring-btn ice" style="--i:10;" data-type="ice">Ice</button>
+<button class="ring-btn dragon" style="--i:11;" data-type="dragon">Dragon</button>
+<button class="ring-btn fighting" style="--i:12;" data-type="fighting">Fighting</button>
+<button class="ring-btn dark" style="--i:13;" data-type="dark">Dark</button>
+<button class="ring-btn flying" style="--i:14;" data-type="flying">Flying</button>
+<button class="ring-btn ground" style="--i:15;" data-type="ground">Ground</button>
+<button class="ring-btn poison" style="--i:16;" data-type="poison">Poison</button>
+<button class="ring-btn normal" style="--i:17;" data-type="normal">Normal</button>
+</div>
+
+
+<div id="selection-status">
+    <h1>Select Typing</h1>
+</div>
+<div id="results"></div>
+
+
+<script>
+    const API_BASE = 'https://pokeapi.co/api/v2';
+
+    const resultsE1 = document.getElementById('results');
+    const statusE1 = document.getElementById('selection-status');
+    const ringButtons = document.querySelectorAll('.ring-btn');
+
+    let firstType = null;
+    let secondType = null;
+
+    function renderList(title, pokemonList){
+        if (!pokemonList.length){
+            resultsE1.innerHTML = `<h2>${title}</h2><p>No Pokemon found...</p>`;
+            return;
+        }
+
+        const listItems = pokemonList
+  .sort((a, b) => a.id - b.id)
+  //.slice(0,50)// Helps limit how many results shown to 50, but seems redundant
+  .map(p => `
+    <div class="pokemon-card">
+      ${p.sprite
+        ? `<img src="${p.sprite}" alt="${p.name}" loading="lazy">`
+        : '<div class="pokemon-placeholder"></div>'
+      }
+      <div class="pokemon-info">
+        <div class="pokemon-name">${p.name}</div>
+        <div class="pokemon-id">#${p.id.toString().padStart(3, '0')}</div>
+      </div>
+    </div>
+  `).join('');
+
+resultsE1.innerHTML = `
+  <h2>${title}</h2>
+  <div class="pokemon-list">${listItems}</div>
+`;
+    }
+
+    async function fetchType(typeName) {
+    const res = await fetch(`${API_BASE}/type/${typeName}/`);
+    if (!res.ok) throw new Error('Failed to fetch type ' + typeName);
+    const data = await res.json(); // contains `pokemon` array [web:67][web:69][web:82]
+    return data.pokemon.map(entry => entry.pokemon.name);
+  }
+
+  async function fetchPokemonSprite(name){
+  try{
+  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+  if (!res.ok) throw new Error('Failed to fetch pokemon' + name);
+  const data = await res.json();
+  return {
+  sprite: data.sprites.front_default || null,
+  id: data.id
+  };
+  } catch(e){
+    return { sprite: null, id: 0}; // fallback in case something fails
+  }
+ }
+
+  async function showSingleType(typeName) {
+  try {
+   resultsE1.innerHTML = `
+  <h2>${typeName} type Pokémon</h2>
+  <div class="pokemon-list">
+    <div class="pokemon-skeleton">
+      <div class="pokemon-skeleton-avatar"></div>
+      <div class="pokemon-skeleton-text"></div>
+    </div>
+    <div class="pokemon-skeleton">
+      <div class="pokemon-skeleton-avatar"></div>
+      <div class="pokemon-skeleton-text"></div>
+    </div>
+  </div>
+`;
+
+    const pokemonNames = await fetchType(typeName);
+
+    const pokemonWithSprites = await Promise.all(
+      pokemonNames.map(async (name) => {
+        const spriteData = await fetchPokemonSprite(name);
+
+        return {
+          name,
+          sprite: spriteData.sprite,
+          id: spriteData.id
+        };
+      })
+    );
+
+    renderList(`${typeName} type Pokemon`, pokemonWithSprites);
+  } catch (err) {
+    resultsE1.innerHTML = `<p>Error: ${err.message}</p>`;
+  }
+}
+
+  async function showDualType(type1, type2) {
+    try {
+      resultsE1.textContent = 'Loading combo...';
+
+      const [list1, list2] = await Promise.all([
+        fetchType(type1),
+        fetchType(type2)
+      ]);
+
+      const set2 = new Set(list2);
+      const intersectionNames = list1.filter(name => set2.has(name));
+
+      const pokemonWithSprites = await Promise.all(
+        intersectionNames.map(async (name) => {
+         const spriteData = await fetchPokemonSprite(name);
+
+        return{
+        name,sprite: spriteData.sprite, id:spriteData.id
+        };
+      })
+     );
+
+      renderList(`${type1} / ${type2} dual-type Pokemon`, pokemonWithSprites);
+    } catch (err) {
+      resultsE1.innerHTML = `<p>Error: ${err.message}</p>`;
+    }
+  }
+
+  function updateStatus() {
+    if (firstType && secondType) {
+      statusE1.textContent = `Selected: ${firstType} + ${secondType}`;
+    } else if (firstType) {
+      statusE1.textContent = `Selected: ${firstType}`;
+    } else {
+      statusE1.textContent = '';
+    }
+  }
+
+  function clearSelections() {
+    firstType = null;
+    secondType = null;
+    ringButtons.forEach(btn => btn.classList.remove('selected'));
+    updateStatus();
+  }
+
+  ringButtons.forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const type = btn.dataset.type;
+      if (!type) return;
+
+      // If nothing selected yet
+      if (!firstType && !secondType) {
+        firstType = type;
+        btn.classList.add('selected');
+        updateStatus();
+        return;
+      }
+
+      // If first selected and you click it again: show single type and reset
+      if (firstType === type && !secondType) {
+        await showSingleType(type);
+        clearSelections();
+        return;
+      }
+
+      // If first selected and you click a different one: set second and show dual
+      if (firstType && !secondType && type !== firstType) {
+        secondType = type;
+        btn.classList.add('selected');
+        updateStatus();
+        await showDualType(firstType, secondType);
+        clearSelections();
+        return;
+      }
+
+      // If both are set (should be cleared after show), just reset and treat this as new first
+      clearSelections();
+      firstType = type;
+      btn.classList.add('selected');
+      updateStatus();
+    });
+  });
+</script>
+</body>
+</html>
